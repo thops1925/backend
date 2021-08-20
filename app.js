@@ -12,7 +12,7 @@ app.use(express.json())
 
 mongoose
     .connect(
-        process.env.DATA_URI
+        process.env.DATA_URI,
         {
             useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true,
         }
