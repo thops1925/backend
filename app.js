@@ -9,10 +9,9 @@ const Port = process.env.PORT || 5000;
 app.use(cors())
 app.use(express.json())
 
-const mongoURI = process.env.URIT;
 mongoose
     .connect(
-        mongoURI,
+        process.env.URIT,
         { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
