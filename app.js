@@ -9,9 +9,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+
 mongoose
     .connect(
-        process.env.URIT,
+        process.env.DATA_URI
         {
             useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true,
         }
