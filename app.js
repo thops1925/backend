@@ -1,8 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+require('dotenv').config({ path: '.env' });
+
 const todo = require('./routes/TodoRoutes')
-require('dotenv').config()
 
 const app = express()
 app.use(cors())
@@ -11,12 +12,15 @@ app.use(express.json())
 mongoose
     .connect(
         process.env.URIT,
-        { useNewUrlParser: true, useUnifiedTopology: true }
+        {
+            useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true,
+        }
     )
     .then(() => {
         console.log('MongoDB Connected');
     })
     .catch(err => console.log(err));
+
 mongoose.connection
     .once('open', function () {
         console.log('MongoDB running');
