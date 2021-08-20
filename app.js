@@ -11,7 +11,14 @@ app.use(express.json())
 
 const db = process.env.URIT;
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connection.once('open', () => console.log('open connection'))
+mongoose.connection
+    .once('open', function () {
+        console.log('MongoDB running');
+    })
+    .on('error', function (err) {
+        console.log(err);
+    });
+
 
 app.use('/thops', todo)
 app.listen(Port, () => console.log('listening on port'))
