@@ -33,4 +33,4 @@ mongoose.connection
 
 
 app.use('/thops', todo)
-app.listen(process.env.PORT || 5000, () => console.log('listening on port'))
+app.listen(process.env.PORT || 5040, () => console.log('listening on port'))
